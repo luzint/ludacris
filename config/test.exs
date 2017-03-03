@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :phoenix_ludacris, PhoenixLudacris.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   database: "phoenix_ludacris_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
