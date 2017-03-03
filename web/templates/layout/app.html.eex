@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello PhoenixLudacris!</title>
+    <title>Ludacris</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/vendor/bootstrap/css/bootstrap.min.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/justified-nav.css") %>">
