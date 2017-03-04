@@ -22,6 +22,20 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+#Generate a 126-bit oct JWK
+#JOSE.JWK.generate_key({:oct, 16}) |> JOSE.JWK.to_map |> elem(1)
+#%{"k" => "5fn8i7r5cRWZW_yyr9flkg", "kty" => "oct"}
+
+config :guardian, Guardian,
+  allowed_alogs: ["HS512"],
+  verify_module: Guardian.JWT,  # optional
+  issuer: "Ludacris",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: false, # optional
+  secret_key: %{"k" => "5Fn8i7r5cRWZW_yyr9Flkg", "kty" => "oct"},
+  serializer: MyApp.GuardianSerializer
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
