@@ -1,0 +1,18 @@
+<h2>Show howto</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @howto.title %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @howto.body %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: howto_path(@conn, :edit, @howto) %>
+<%= link "Back", to: howto_path(@conn, :index) %>

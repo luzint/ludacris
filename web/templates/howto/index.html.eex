@@ -1,0 +1,28 @@
+<h2>Listing howtos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for howto <- @howtos do %>
+    <tr>
+      <td><%= howto.title %></td>
+      <td><%= howto.body %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: howto_path(@conn, :show, howto), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: howto_path(@conn, :edit, howto), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: howto_path(@conn, :delete, howto), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New howto", to: howto_path(@conn, :new) %>

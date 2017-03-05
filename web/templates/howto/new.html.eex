@@ -1,0 +1,6 @@
+<h2>New howto</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: howto_path(@conn, :create) %>
+
+<%= link "Back", to: howto_path(@conn, :index) %>

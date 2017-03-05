@@ -19,6 +19,8 @@ defmodule PhoenixLudacris.Router do
     get "/", PageController, :index
     get "/about", PageController, :about
     get "/contact", PageController, :contact
+
+    resources "/howtos", HowtoController
   end
 
   # Other scopes may use custom stacks.
