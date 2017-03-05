@@ -19,7 +19,7 @@ defmodule PhoenixLudacris.Mixfile do
   def application do
     [mod: {PhoenixLudacris, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :ueberauth]]
+                    :phoenix_ecto, :postgrex, :ueberauth, :ueberauth_facebook, :ueberauth_identity]]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,6 +36,8 @@ defmodule PhoenixLudacris.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:guardian, "~> 0.14"},
      {:ueberauth, "~> 0.4"},
+     {:ueberauth_facebook, "~> 0.3.2"},
+     {:ueberauth_identity, "~>0.2.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
