@@ -24,9 +24,18 @@ config :logger, :console,
 
 config :ueberauth, Ueberauth,
   providers: [
-    facebook: {Ueberauth.Strategy.Facebook, [profile_fields: "email, name"]},
-    identity: {Ueberauth.Strategy.Identity, [callback_methods: ["POST"]]}
+    facebook: {Ueberauth.Strategy.Facebook, []},
+    identity: {Ueberauth.Strategy.Identity, [
+        callback_methods: ["POST"],
+        uid_field: :username,
+        nickname_field: :username,
+        ] }
   ]
+
+config :ueberauth, Ueberauth.Strategy.Facebook.Oauth,
+  client_id: System.get_env("FACEBOOK_APP_ID"),
+  client_secret: System.get_env("FACEBOOK_APP_SECRET"),
+  redirect_uri: System.get_env("FACEBOOK_REDIRECT_URI")
 
 
 #Generate a 126-bit oct JWK

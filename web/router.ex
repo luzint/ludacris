@@ -1,5 +1,6 @@
 defmodule PhoenixLudacris.Router do
   use PhoenixLudacris.Web, :router
+  require Ueberauth
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -11,6 +12,15 @@ defmodule PhoenixLudacris.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/auth", PhoenixLudacris do
+    pipe_through [:browser]
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+    post "/:provider/callback", AuthController, :callback
+    delete "/logout", AuthController, :delete
   end
 
   scope "/", PhoenixLudacris do
