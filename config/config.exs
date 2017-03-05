@@ -22,6 +22,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :ueberauth, Ueberauth,
+  providers: [
+    facebook: {Ueberauth.Strategy.Facebook, [profile_fields: "email, name"]},
+    identity: {Ueberauth.Strategy.Identity, [callback_methods: ["POST"]]}
+  ]
+
+
 #Generate a 126-bit oct JWK
 #JOSE.JWK.generate_key({:oct, 16}) |> JOSE.JWK.to_map |> elem(1)
 #%{"k" => "5fn8i7r5cRWZW_yyr9flkg", "kty" => "oct"}
