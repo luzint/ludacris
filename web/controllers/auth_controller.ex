@@ -5,7 +5,7 @@ defmodule PhoenixLudacris.AuthController do
    alias Ueberauth.Strategy.Helpers
 
   def request(conn, _params) do
-    render(conn, "request.html", callback_url: Helpers.callback_url(conn))
+    render(conn, "signup.html", callback_url: Helpers.callback_url(conn))
   end
 
   def delete(conn, _params) do
@@ -25,7 +25,7 @@ defmodule PhoenixLudacris.AuthController do
     case UserFromAuth.find_or_create(auth) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "Successfully authenticated.")
+        |> put_flash(:info, "Successfully Logged In.")
         |> put_session(:current_user, user)
         |> redirect(to: "/")
       {:error, reason} ->

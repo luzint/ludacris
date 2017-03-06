@@ -35,6 +35,7 @@ defmodule PhoenixLudacris.Mixfile do
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
      {:guardian, "~> 0.14"},
+     {:elixir_make, "~> 0.4.0"},
      {:ueberauth, "~> 0.4"},
      {:oauth, github: "tim/erlang-oauth"},
      {:ueberauth_facebook, "~> 0.3.2"},

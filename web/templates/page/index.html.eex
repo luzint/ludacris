@@ -9,7 +9,12 @@
   <% else %>
     <a class="btn btn-primary btn-lg" href="/auth/identity">
       <i class="fa fa-user"></i>
-      Sign in with Username/Password
+        Sign up
+    </a>
+
+    <a class="btn btn-primary btn-lg" href="/auth/identity">
+      <i class="fa fa-user"></i>
+        Sign in
     </a>
   <% end %>
 </div>
